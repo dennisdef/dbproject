@@ -19,7 +19,7 @@ create table organisation(
 	organisation_id INT unsigned not null auto_increment,
 	name varchar(45) not null,
 	abbr varchar(10) not null,
-	postal_code varchar(45) default null,
+	postal_code varchar(45) not null,
 	street varchar(45) not null,
 	city varchar(45) not null,
 	street_number varchar(45) not null,
