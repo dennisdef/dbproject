@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    All Programs
+{% endblock title %}
+
+
+{% block content%}
+<table class = "table table-striped table-hover">
+    <tr>
+        <th>Program Id</th>
+        <th>Program Title</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for r in res %}
+    <tr>
+        <td>{{r.id}}</td>
+        <td>
+            {{r.name}}
+        </td>
+        <td><a class="btn btn-outline-danger" href="{{ url_for('update_program', id = r.id)}}">Update</a></td>
+        <td><a class="btn btn-outline-danger" href="{{ url_for('delete_program', id = r.id)}}">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+{% endblock content %}

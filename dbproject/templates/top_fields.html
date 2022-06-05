@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{pageTitle}}
+{% endblock title %}
+
+
+{% block content %}
+
+<table class = "table table-striped table-hover">
+    <tr>
+        <th>Field Couples</th>
+        <th>Number of projects in Couple</th>
+    </tr>
+    {% for tf in top_fields %}
+    <tr>
+        <td>{{tf.field_couple}}</td>
+        <td>
+            {{tf.np}}
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+    
+    {% endblock content %}

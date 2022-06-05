@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Statistics
+{% endblock title %}
+
+
+{% block content%}
+
+<ul>
+    <li>
+        <a class ="linkStyle" href="{{ url_for('project_per_year') }}">Show Consecutive Projects</a>
+    </li>
+
+    <li>
+        <a class ="linkStyle" href="{{ url_for('top_science_field_couple') }}">Show Top Science Field Couples</a>
+    </li>
+
+    <li>      
+        <a class ="linkStyle" href="{{ url_for('executives') }}">Show Executives With Biggest Grands</a>
+    </li>
+
+    <li>
+        <a class ="linkStyle" href="{{ url_for('under_40') }}">Show Researchers Under 40</a>
+    </li>
+
+    <li>  
+        <a class ="linkStyle" href="{{ url_for('res_with_no_del') }}">Show Researchers With no Deliverables</a>
+    </li>
+    <li>
+        <a class ="linkStyle" href="{{ url_for('projects_per_researcher') }}">Show Project Per Researcher</a>
+    </li>
+    <li>
+        <a class ="linkStyle" href="{{ url_for('projects_per_organisation') }}">Show Project Per Organisation</a>
+    </li>
+</ul>
+
+{% endblock content%}

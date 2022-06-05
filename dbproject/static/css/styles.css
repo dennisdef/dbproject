@@ -1,0 +1,40 @@
+body{
+    background-color: f5ddd8;
+}
+
+.title{
+    font-size: 70;
+    color: 642011;
+}
+
+.linkStyle{
+    color: 000;
+    font-size: 20;
+}
+
+.linkStyle:hover{
+    color: rgb(62, 61, 61);
+}
+
+.titles{
+    color:rgb(62, 61, 61);
+    text-decoration: none;
+}
+
+.titles:hover{
+    color:rgb(62, 61, 61);
+    text-decoration: none;
+}
+
+.dates{
+    font-weight: bold;
+}
+
+.program{
+    font-weight: bold;
+    font-size: large;
+}
+
+.base{
+    margin-top: 5px;
+}
