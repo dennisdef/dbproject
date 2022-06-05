@@ -35,6 +35,7 @@ create table researcher(
 	start_date timestamp not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	organisation_id int unsigned not null,
 	primary key (r_id),
+	KEY idx_researcher_birth_date (birth_date),
 	constraint fk_er foreign key (organisation_id) references organisation (organisation_id) ON DELETE CASCADE ON UPDATE CASCADE 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -42,7 +43,8 @@ create table science_field(
 	field_id INT unsigned not null auto_increment,
 	en_name varchar(45) not null,
 	name varchar(45) not null,
-	primary key (field_id)
+	primary key (field_id),
+	KEY idx_science_field_en_name (en_name)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table phone(
@@ -94,6 +96,9 @@ create table project(
 	organisation_id int unsigned not null,
 	r_id int unsigned null,
 	primary key (project_id),
+	KEY idx_project_title (title),
+	KEY idx_project_start_date (start_date),
+	KEY idx_project_end_date (end_date),
 	constraint fk_organisation_project foreign key (organisation_id) references organisation (organisation_id) ON DELETE CASCADE ON UPDATE cascade,
 	constraint fk_researcher_project foreign key (r_id) references researcher (r_id) ON DELETE RESTRICT ON UPDATE cascade,
 	constraint fk_evaluator_project foreign key (evaluator_id) references researcher (r_id) ON DELETE RESTRICT ON UPDATE cascade,
@@ -129,8 +134,7 @@ create table project_science_field(
 
 
 CREATE VIEW project_per_year AS
-select
-    o.organisation_id ,o.name, year(p.start_date) AS s_year,
+select  o.organisation_id ,o.name, year(p.start_date) AS s_year,
     count(p.project_id) AS count_projects
 from organisation o
 inner join project p on p.organisation_id = o.organisation_id
@@ -154,5 +158,3 @@ create view projects_per_organisation as
 select  o.name as name, p.title as project
 from organisation o  inner join project p on o.organisation_id=p.organisation_id
 order by name;
-
-
