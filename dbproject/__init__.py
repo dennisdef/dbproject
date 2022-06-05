@@ -1,9 +1,6 @@
 from flask import Flask
 from flask_mysqldb import MySQL
 from flask_wtf.csrf import CSRFProtect
-## __name__ is the name of the module. When running directly from python, it will be 'dbdemo'
-## Outside of this module, as in run.py, it is '__main__' by default
-## Create an instance of the Flask class to be used for request routing
 app = Flask(__name__)
 
 app.config["MYSQL_USER"] = ''
