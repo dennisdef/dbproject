@@ -32,7 +32,6 @@
                     {{ form.hidden_tag() }}
                     <div class="form-group mb-2">
                     {{ form.name.label(class = "form-label") }}
-                    <!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
                     {{ form.name(class = "form-control", placeholder="Enter Name", required = False) }}
                     {% if form.name.errors %}
                     <ul class = "errors">
