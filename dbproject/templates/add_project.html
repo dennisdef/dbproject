@@ -12,12 +12,10 @@
 <div class="container">
             <form name="project-form" method="POST">
                 <div class="row" >
-                <!-- hidden_tag returns the form's security metadata -->
                 {{ form.hidden_tag() }}
                 <div class="col-5">
                     <div class="form-group mb-2">
                         {{ form.title.label(class = "form-label") }}
-                        <!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
                         {{ form.title(class = "form-control", placeholder="Enter title", required = False) }}
                         {% if form.title.errors %}
                         <ul class = "errors">
