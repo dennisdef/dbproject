@@ -627,7 +627,7 @@ def science_field(sf):
                 inner join project p on p.project_id=psf.project_id
                 where p.end_date>CURDATE() and sf.en_name = '{}'""".format(sf)
 
-        query1 = """select CONCAT(r.first_name,' ',r.last_name) as researcher
+        query1 = """select DISTINCT CONCAT(r.first_name,' ',r.last_name) as researcher
                 from science_field sf inner join project_science_field psf on sf.field_id=psf.field_id
                 inner join project p on p.project_id=psf.project_id
                 inner join works w on w.project_id=p.project_id

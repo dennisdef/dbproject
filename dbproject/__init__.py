@@ -3,8 +3,8 @@ from flask_mysqldb import MySQL
 from flask_wtf.csrf import CSRFProtect
 app = Flask(__name__)
 
-app.config["MYSQL_USER"] = ''
-app.config["MYSQL_PASSWORD"] = ''
+app.config["MYSQL_USER"] = 'admin'
+app.config["MYSQL_PASSWORD"] = 'admin'
 app.config["MYSQL_DB"] = 'dbproject'
 app.config["MYSQL_HOST"] = ''
 app.config["SECRET_KEY"] = '\xfc\x1a\x1b\x91G\x97E\xceb\xaa\x15\xa8u\x86\xaf\x13\x9fm\x1e\xbb\x85\t' ## secret key for sessions (signed cookies). Flask uses it to protect the contents of the user session against tampering.
